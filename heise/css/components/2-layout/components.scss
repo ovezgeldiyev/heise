@@ -1,0 +1,319 @@
+h1 {
+  font-family: $anton;
+  font-weight: 400;
+  font-size: 76px;
+  line-height: 78px;
+  text-transform: uppercase;
+  color: $white;
+}
+
+h2 {
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 28px;
+  color: $primary;
+}
+
+h5 {
+  font-family: $anton;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 120%;
+  letter-spacing: -0.015em;
+}
+h6 {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+}
+p {
+  &.lg {
+    font-size: 28px;
+    line-height: 32px;
+    font-weight: 500;
+  }
+  &.big {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 24px;
+  }
+  &.sm {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+  }
+  &.ex {
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+    color: $black;
+  }
+}
+.main {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $anton;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+  text-transform: uppercase;
+  color: $white;
+  padding: 8px 30px 8px 40px;
+  border-radius: 5px;
+  background-color: $green;
+  cursor: pointer;
+  transition: 0.3s ease;
+  &:hover {
+    background-color: $primary;
+  }
+  span {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    img {
+      width: 100%;
+    }
+  }
+}
+.input {
+  display: flex;
+  width: 100%;
+  position: relative;
+  &.sel {
+    position: relative;
+  }
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    right: 6px;
+    width: 24px;
+    height: 24px;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    img {
+      width: 100%;
+    }
+  }
+  &__outer {
+    display: flex;
+    flex-direction: column;
+    p {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 110%;
+      color: $primary;
+      margin-bottom: 5px;
+    }
+  }
+  input,
+  select {
+    width: 100%;
+    height: 100%;
+    padding: 11px 15px;
+    background: $white;
+    font-family: $mainFont;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    color: $black2;
+    &::placeholder {
+      color: #bfbfbf;
+    }
+  }
+  select {
+    -webkit-appearance: none;
+    padding: 12px 15px;
+    cursor: pointer;
+  }
+  input[type="date"]::-webkit-inner-spin-button,
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
+}
+.radio {
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+  &__btn {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    margin-right: 5px;
+    input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      z-index: 2;
+      cursor: pointer;
+      &:checked {
+        & ~ span {
+          &::before {
+            opacity: 1;
+          }
+        }
+      }
+    }
+    span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 83%;
+      height: 83%;
+      border-radius: 50%;
+      border: 2px solid $primary;
+      transform: translate(-50%, -50%);
+      &::before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 50%;
+        height: 50%;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        content: "";
+        background-color: $primary;
+        opacity: 0;
+        transition: 0.3s ease;
+      }
+    }
+  }
+  h6 {
+    color: $primary;
+    width: calc(100% - 25px);
+  }
+}
+.check {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  &__box {
+    width: 16px;
+    height: 16px;
+    position: relative;
+    margin-right: 10px;
+    input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      z-index: 2;
+      cursor: pointer;
+      &:checked {
+        & ~ span {
+          &::before {
+            opacity: 1;
+          }
+        }
+      }
+    }
+    span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 2px solid $primary;
+      border-radius: 2px;
+      background-color: $white;
+      &::before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 75%;
+        height: 40%;
+        content: "";
+        opacity: 0;
+        transition: 0.3s ease;
+        border-top: 2px solid $primary;
+        border-right: 2px solid $primary;
+        transform: translate(-50%, -70%) rotate(135deg);
+      }
+    }
+  }
+  p {
+    width: calc(100% - 26px);
+    color: $black;
+    a {
+      text-decoration: underline;
+      color: $black;
+    }
+    input {
+      width: 170px;
+      font-family: $mainFont;
+      color: $black2;
+      font-size: 80%;
+      line-height: 80%;
+      border-bottom: 1px solid $black2;
+      background-color: transparent;
+    }
+  }
+}
+.circle {
+  &Green {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 15px;
+    text-align: center;
+    color: $white;
+    width: 100px;
+    height: 100px;
+    background: $green;
+    border: 1.5px solid #ffffff;
+    transform: translate(-30%, 10%) rotate(-8deg);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    z-index: 3;
+  }
+  &Blue {
+    position: absolute;
+    top: 7%;
+    left: 22%;
+    width: 148px;
+    height: 148px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    text-align: center;
+    color: $white;
+    transform: rotate(-8deg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    background: #1f7db5;
+    border: 2px solid #ffffff;
+    transform: translate(-30%, 10%) rotate(-8deg);
+    border-radius: 50%;
+    z-index: 3;
+  }
+}

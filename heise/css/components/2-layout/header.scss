@@ -1,0 +1,48 @@
+.header {
+  background-color: $primary;
+  padding: 20px 0;
+  &__inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &-logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 160px;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+// 930px
+@mixin header-md-lg {
+  .header {
+    &__inner {
+      &-logo {
+        width: 140px;
+      }
+    }
+  }
+}
+// 750px
+@mixin header-sm-md {
+  .header {
+    &__inner {
+      &-logo {
+        width: 110px;
+      }
+    }
+  }
+}
+// 540px
+@mixin header-xsm-sm {
+  .header {
+    &__inner {
+      &-logo {
+        width: 86px;
+      }
+    }
+  }
+}

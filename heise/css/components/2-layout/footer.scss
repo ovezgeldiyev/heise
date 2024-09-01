@@ -1,0 +1,58 @@
+.footer {
+  padding: 40px 0;
+  background-color: $primary;
+  margin: auto 0 0 0;
+  &__inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a {
+      font-weight: 700;
+      font-size: 22px;
+      line-height: 24px;
+      text-decoration-line: underline;
+      color: $white;
+      margin-right: 60px;
+      &:last-child {
+        margin: 0;
+      }
+      &:hover {
+        opacity: 1;
+        color: $black2;
+      }
+    }
+  }
+}
+// 930px
+@mixin footer-md-lg {
+  .footer {
+    padding: 30px 0;
+    &__inner {
+      a {
+        font-size: 20px;
+      }
+    }
+  }
+}
+// 750px
+@mixin footer-sm-md {
+  .footer {
+    &__inner {
+      a {
+        font-size: 18px;
+      }
+    }
+  }
+}
+// 540px
+@mixin footer-xsm-sm {
+  .footer {
+    &__inner {
+      flex-direction: column;
+      a {
+        font-size: 16px;
+        margin: 0 0 10px 0;
+      }
+    }
+  }
+}
